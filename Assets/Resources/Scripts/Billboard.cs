@@ -5,8 +5,8 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
 
-    private Camera mainCam;
-    public bool useStaticBillboard;
+    private Camera mainCam;//ini untuk camera player??
+    public bool useStaticBillboard;// informasi status penggunaan static billboard
 
 
     // Start is called before the first frame update
