@@ -5,13 +5,17 @@ using UnityEngine;
 public class RB_PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 10f;
-    public float rbDrag = 6f;
     public float movementMultiplier = 10f;
+    public float rbGroundDrag = 6f;
+    public float rbAirDrag = 2f;
     public Animator camAnim;
-    
+
+    float playerHeight = 2f;
+
     float horizontalAxis;
     float verticalAxis;
-    private bool isWalking;
+    bool isWalking;
+    bool isGrounded;
 
     Vector3 moveDirection;
 
@@ -26,6 +30,8 @@ public class RB_PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.01f);
+                
         GetInput();
         ControlDrag();
         CheckForBobbing();
@@ -35,7 +41,14 @@ public class RB_PlayerMovement : MonoBehaviour
 
     void ControlDrag()
     {
-        rb.drag = rbDrag;
+        if(isGrounded)
+        {
+            rb.drag = rbGroundDrag;
+        }
+        else
+        {
+            rb.drag = rbAirDrag;
+        }
     }
 
     void GetInput()
@@ -72,4 +85,5 @@ public class RB_PlayerMovement : MonoBehaviour
             isWalking = false;
         }
     }
+
 }
