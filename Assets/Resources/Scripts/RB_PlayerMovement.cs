@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RB_PlayerMovement : MonoBehaviour
@@ -56,7 +54,7 @@ public class RB_PlayerMovement : MonoBehaviour
         //Get keyboard input
         horizontalAxis = Input.GetAxisRaw("Horizontal");
         verticalAxis = Input.GetAxisRaw("Vertical");
-
+        
         //Move applying axis to transform object
         moveDirection = transform.forward * verticalAxis + transform.right * horizontalAxis;
     }
@@ -76,7 +74,7 @@ public class RB_PlayerMovement : MonoBehaviour
 
     void CheckForBobbing()
     {
-        if(rb.velocity.magnitude > 0.1f)
+        if(rb.velocity.magnitude > 0.9f)
         {
             isWalking = true;
         }
