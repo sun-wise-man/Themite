@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     int health;
 
     public HealthBar healthBar;
+    public PauseBehaviour retryBehaviour;
 
     void Start()
     {
@@ -19,8 +20,9 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         healthBar.SetHealth(health);
-        if (health < damage) 
-            Debug.Log("Dead");
+        if (health < damage)
+            retryBehaviour.GameOverScreen();
+            //Debug.Log("Dead");
     }
 
     public void GiveHealth(int amount)
