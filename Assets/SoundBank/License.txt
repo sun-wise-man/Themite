@@ -1,0 +1,146 @@
+Forest_Bright
+Duration: 00:54
+UCS Category: Ambience / Forest (AMBForst) ⊕
+Type: Soundscape
+Channels: Stereo ⊕
+Conditions: Outdoor ⊕
+Realism: Real ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 16 Bits ⊕
+Author: Joseph SARDIN
+
+Ghost
+Duration: 00:07
+UCS Category: Creatures / Ethereal (CREAEthr) ⊕
+Type: Alone sound
+Channels: Mono ⊕
+Conditions: Studio ⊕
+Realism: Idealized ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 24 Bits ⊕
+Equipment: SoundDevices MixPre-3 Recorder and Microphones Neumann KM184 Microphone ⊕
+Author: Joseph SARDIN
+
+Rain and Forest
+Duration: 02:37
+UCS Category: Weather / Storm (STORM) ⊕
+Type: Soundscape
+Channels: Stereo ⊕
+Disposition: XY ⊕
+Conditions: Outdoor ⊕
+Realism: Real ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 16 Bits ⊕
+Author: Joseph SARDIN
+
+Pig
+Duration: 00:06
+UCS Category: Animals / Farm (ANMLFarm) ⊕
+Type: Foley
+Channels: Mono ⊕
+Conditions: Indoor ⊕
+Realism: Foley ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 24 Bits ⊕
+Equipment: SoundDevices MixPre-3 Recorder and Sennheiser ME66 Microphone ⊕
+Author: Joseph SARDIN
+
+Health_critical
+Duration: 00:08
+UCS Category: Human / Heartbeat (HMNHart) ⊕
+Type: Alone sound
+Channels: Mono ⊕
+Conditions: Studio ⊕
+Realism: Idealized ⊕
+Sampling Rate: 11,025 Hz ⊕
+Bit depth: 16 Bits ⊕
+
+Running on the tall grass
+Duration: 00:19
+UCS Category: Footsteps / Human (FEETHmn) ⊕
+Type: Alone sound
+Channels: Mono ⊕
+Conditions: Outdoor ⊕
+Realism: Real ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 24 Bits ⊕
+Equipment: SoundDevices MixPre-3 Recorder and Microphones Neumann KM184 Microphone ⊕
+Author: Joseph SARDIN
+
+Steps on the gravel
+Duration: 00:09
+UCS Category: Footsteps / Human (FEETHmn) ⊕
+Type: Alone sound
+Channels: Mono ⊕
+Conditions: Outdoor ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 16 Bits ⊕
+Author: Joseph SARDIN
+
+Tuyul_howling
+Duration: 00:02
+UCS Category: Voices / Scream (VOXScrm) ⊕
+Type: Alone sound
+Channels: Mono ⊕
+Conditions: Indoor ⊕
+Realism: Idealized ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 24 Bits ⊕
+Equipment: SoundDevices MixPre-3 Recorder and Sennheiser ME66 Microphone ⊕
+Author: Joseph SARDIN
+
+Sound n°: 1,664
+
+Tuyul_howling_var1
+Duration: 00:02
+UCS Category: Crowds / Panic (CRWDPanic) ⊕
+Type: Alone sound
+Channels: Mono ⊕
+Conditions: Indoor ⊕
+Realism: Idealized ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 24 Bits ⊕
+Equipment: SoundDevices MixPre-3 Recorder and Sennheiser ME66 Microphone ⊕
+Author: Joseph SARDIN
+
+Sound n°: 1,661
+
+Sword_whoosh
+ Duration: 00:01
+UCS Category: Swooshes / Swish (SWSH) ⊕
+Type: Alone sound
+Channels: Stereo ⊕
+Disposition: ORTF ⊕
+Conditions: Studio ⊕
+Realism: Real ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 24 Bits ⊕
+Equipment: SoundDevices MixPre-3 Recorder and Microphones Rode NT5 Microphone ⊕
+Author: Joseph SARDIN
+
+Sound n°: 1,801
+
+Dark_laugh
+ Duration: 00:07
+UCS Category: Voices / Laugh (VOXLaff) ⊕
+Type: Alone sound
+Channels: Mono ⊕
+Conditions: Studio ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 16 Bits ⊕
+Author: Joseph SARDIN
+
+Sound n°: 490
+
+Cry of pain
+ Duration: 00:01
+UCS Category: Voices / Efforts (VOXEfrt) ⊕
+Type: Alone sound
+Channels: Mono ⊕
+Conditions: Studio ⊕
+Realism: Real ⊕
+Sampling Rate: 48,000 Hz ⊕
+Bit depth: 24 Bits ⊕
+Author: Dorian CLAIR
+
+Sound n°: 2,361
