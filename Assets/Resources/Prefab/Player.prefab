@@ -151,7 +151,7 @@ MonoBehaviour:
   spread: 0
   reloadTime: 0
   timeBetweenShots: 0
-  magazineSize: 100
+  magazineSize: 500
   bulletPerTap: 1
   allowedButtonHold: 0
   fpsCam: {fileID: 3918577028504648294}

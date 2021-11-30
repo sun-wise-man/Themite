@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
     public float explosionForce;
 
     [Header("Lifetime")]
-    public int maxCollision;
+    public int maxCollisions;
     public float maxLifetime;
     public bool explodeOnTouch = true;
 
@@ -29,30 +29,33 @@ public class BulletScript : MonoBehaviour
     }
 
     private void Update() {
-        if (collisions >= maxCollision) Explode();
+        if (collisions >= maxCollisions) EffectExplode();
         
         maxLifetime -= Time.deltaTime;
-        if (maxLifetime <= 0) Explode();
+        if (maxLifetime <= 0) Invoke("Delay", 0.05f);
+    }
+
+    void EffectExplode()
+    {
+        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        Delay();
     }
 
     void Explode()
     {
+        //Debug.Log("Hit!");
         //Instantiate explosion
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
-        // One of many ways to damage enemies, but isn't reliable
-        // vvvvvvvvvvvvvvvv
-
         //Check for enemies
-        // Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
-        // for (int i = 0; i < enemies.Length; i++)
-        // {
-        //     //Get component of enemy and call Take Damage
-        //     enemies[i].GetComponent<EnemyHealthScript>().TakeDamage(explosionDamage);
-        // }
+        Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            //Get component of enemy and call Take Damage
+            enemies[i].GetComponent<EnemyHealthScript>().TakeDamage(explosionDamage);
+        }
 
-
-        Invoke("Delay", 0.05f);
+        Invoke("Delay", 0.01f);
     }
 
     void Delay()
@@ -63,9 +66,9 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision) 
     {
         collisions++;
+
         if (collision.collider.CompareTag("Enemy") && explodeOnTouch) 
         {
-            collision.collider.GetComponent<EnemyHealthScript>().TakeDamage(explosionDamage);
             Explode(); 
         }
         
@@ -75,7 +78,7 @@ public class BulletScript : MonoBehaviour
     {
         //Create new physic material
         physcisMat = new PhysicMaterial();
-        physcisMat.bounciness = bounciness;
+        //physcisMat.bounciness = bounciness;
         physcisMat.frictionCombine = PhysicMaterialCombine.Minimum;
         physcisMat.bounceCombine = PhysicMaterialCombine.Maximum;
 
