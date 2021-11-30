@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class EnemyHealthScript : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public float health;
     public GameObject deathEffect;
-    
+    public GameObject itemPickup;
+
     public void TakeDamage(int projectileDamage)
     {
         //Debug.Log("TakeDamage!");
@@ -18,6 +19,7 @@ public class EnemyHealthScript : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Instantiate(itemPickup, transform.position, Quaternion.identity);
     }
-    
+
 }

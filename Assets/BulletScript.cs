@@ -52,7 +52,7 @@ public class BulletScript : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             //Get component of enemy and call Take Damage
-            enemies[i].GetComponent<EnemyHealthScript>().TakeDamage(explosionDamage);
+            enemies[i].GetComponent<EnemyHealth>().TakeDamage(explosionDamage);
         }
 
         Invoke("Delay", 0.01f);
