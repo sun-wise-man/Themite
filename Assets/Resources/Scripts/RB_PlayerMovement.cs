@@ -46,7 +46,7 @@ public class RB_PlayerMovement : MonoBehaviour
         else
         {
             rb.drag = rbAirDrag;
-            rb.AddForce(Vector3.down * 10, ForceMode.Impulse);
+            rb.AddForce(Vector3.down, ForceMode.Force);
         }
     }
 

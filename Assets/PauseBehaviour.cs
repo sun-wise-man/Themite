@@ -8,14 +8,24 @@ public class PauseBehaviour : MonoBehaviour
     public GameObject gameUI;
     public GameObject pauseMenu;
     public GameObject retryMenu;
+    public GameObject startMenu;
+    public GameObject wonMenu;
 
-    bool isPaused;
+    GameObject spawner;
 
-    private void Awake() {
+    public static bool isPaused;
+
+    private void Start() {
+        spawner = GameObject.FindGameObjectWithTag("Spawner");
+
+        Cursor.lockState = CursorLockMode.None;
+        gameUI.SetActive(false);
         pauseMenu.SetActive(false);
         retryMenu.SetActive(false);
-        isPaused = false;
-        Time.timeScale = 1f;
+        startMenu.SetActive(true);
+        wonMenu.SetActive(false);
+        isPaused = true;
+        Time.timeScale = 0f;
     }
 
     private void Update() {
@@ -46,6 +56,15 @@ public class PauseBehaviour : MonoBehaviour
         isPaused = true;
     }
 
+    public void WonScreen()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        gameUI.SetActive(false);
+        wonMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
     public void RetryGame()
     {
         SceneManager.LoadScene("Level1");
@@ -59,5 +78,20 @@ public class PauseBehaviour : MonoBehaviour
         retryMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    public void StartGame()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        gameUI.SetActive(true);
+        startMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+        Invoke("Count", 1f);
+    }
+
+    void Count()
+    {
+        spawner.GetComponent<EnemyController>().CountEnemy();
     }
 }

@@ -5,6 +5,11 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     public GameObject deathEffect;
     public GameObject itemPickup;
+    GameObject spawner;
+
+    private void Start() {
+        spawner = GameObject.FindGameObjectWithTag("Spawner");
+    }
 
     public void TakeDamage(int projectileDamage)
     {
@@ -20,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Instantiate(itemPickup, transform.position, Quaternion.identity);
+        spawner.GetComponent<EnemyController>().CountDie();
     }
 
 }
