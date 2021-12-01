@@ -13038,6 +13038,11 @@ MonoBehaviour:
   animator: {fileID: 1773067008}
   agroRange: 10
   agro: 0
+--- !u!54 &1773067003 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: -2148327802536972089, guid: b400bd10cacfa9842a36ba0a3948105d, type: 3}
+  m_PrefabInstance: {fileID: 1460558062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!195 &1773067004 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 3421664302582990963, guid: b400bd10cacfa9842a36ba0a3948105d, type: 3}
@@ -13048,6 +13053,35 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8333375664671731102, guid: b400bd10cacfa9842a36ba0a3948105d, type: 3}
   m_PrefabInstance: {fileID: 1460558062}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773067010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773067001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65040b2158e38404798e9f2f07198d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  rb: {fileID: 1773067003}
+  followTarget: 0
+  obstacleAvoidance: 0
+  oaDistance: 3
+  speed: 900
+  stoppingDistance: 0
+  destroyOnCollision: 0
+  colisionDelay: 3
+  destroyAfterDelay: 0
+  delay: 3
+  stopOnCollision: 0
+  orbit: 0
+  rotate: 0
+  rotationSpeed: 1
+  fireTrue: 0
+  is3D: 1
 --- !u!114 &1773067011
 MonoBehaviour:
   m_ObjectHideFlags: 0
