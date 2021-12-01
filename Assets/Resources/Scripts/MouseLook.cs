@@ -11,11 +11,6 @@ public class MouseLook : MonoBehaviour
     private float yMousePos;
     private float xRotation;
 
-    private void Start() {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
     void Update()
     {
         GetInput();
@@ -24,12 +19,14 @@ public class MouseLook : MonoBehaviour
 
     void GetInput()
     {
+        // Get mouse position by multiplying sensitivity
         xMousePos = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         yMousePos = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
     }
 
     void RotatePlayer()
     {
+        // Rotate player
         xRotation -= yMousePos;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 

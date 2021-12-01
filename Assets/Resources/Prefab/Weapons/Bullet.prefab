@@ -121,7 +121,7 @@ MonoBehaviour:
   explosionRange: 1
   explosionForce: 0
   maxCollisions: 1
-  maxLifetime: 1
+  maxLifetime: 0.7
   explodeOnTouch: 1
 --- !u!54 &6386252718907000544
 Rigidbody:

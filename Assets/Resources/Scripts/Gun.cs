@@ -30,7 +30,7 @@ public class Gun : MonoBehaviour
     private void Update() 
     {
         MyInput();
-        animator.SetBool("isShooting", shooting);
+        
     }
 
     void MyInput()
@@ -42,10 +42,16 @@ public class Gun : MonoBehaviour
             shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
         //Shooting
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        if (readyToShoot && shooting && !reloading && bulletsLeft > 0 && !PauseBehaviour.isPaused)
         {
             bulletsShot = 0;
             Shoot();
+
+            // Audio
+            FindObjectOfType<AudioManager>().Play("CrossbowFire");
+
+            // Animate
+            animator.SetBool("isShooting", !readyToShoot);
         }
     }
 
@@ -108,6 +114,7 @@ public class Gun : MonoBehaviour
         //Allow shooting
         readyToShoot = true;
         allowInvoke = true;
+        animator.SetBool("isShooting", !readyToShoot);
     }
 
     private void Reload()
