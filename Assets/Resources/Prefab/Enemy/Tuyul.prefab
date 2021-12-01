@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3421664302582990963}
   - component: {fileID: 6429238494207074816}
   - component: {fileID: -2148327802536972089}
+  - component: {fileID: 4567062140893582853}
   m_Layer: 7
   m_Name: Tuyul
   m_TagString: Enemy
@@ -170,3 +171,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &4567062140893582853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333375664671731103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e634172f98aada94897a19991cde98e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  deathEffect: {fileID: 7233370415585132090, guid: 3292c784991083f43bb9c9bfeb657f53, type: 3}
+  itemPickup: {fileID: 8610410739049411122, guid: ec36cfbe34c7a874b87d367ddd0b5340, type: 3}
