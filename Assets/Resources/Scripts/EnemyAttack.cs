@@ -8,13 +8,12 @@ public class EnemyAttack : MonoBehaviour
 
     public GameObject player;
 
-    // private void Awake() {
-    //     player = GameObject.FindGameObjectWithTag("Player");
-    // }
-
     private void OnCollisionEnter(Collision other) {
+        
+        // Condition if collide with 'player'
         if(other.collider.CompareTag("Player"))
         {
+            // Damage the player
             player.GetComponent<PlayerHealth>().DamagePlayer(damage);
         }
     }

@@ -7,14 +7,17 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public int enemyCount;
 
+    // Set 'x' axis range
     [Header("Range X")]
-    public float radX;
+    public float rangeX;
 
+    // Set 'y' axis range
     [Header("Range y")]
-    public float radY;
+    public float rangeY;
 
+    // Set 'z' axis range
     [Header("Range z")]
-    public float radZ;
+    public float rangeZ;
     
     float xPos;
     float yPos;
@@ -30,10 +33,12 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            xPos = Random.Range((transform.position.x - radX), (transform.position.x + radX));
-            yPos = Random.Range((transform.position.y - radY), (transform.position.y + radY));
-            zPos = Random.Range((transform.position.z - radY), (transform.position.z + radY));
+            // Randomize range
+            xPos = Random.Range((transform.position.x - rangeX), (transform.position.x + rangeX));
+            yPos = Random.Range((transform.position.y - rangeY), (transform.position.y + rangeY));
+            zPos = Random.Range((transform.position.z - rangeY), (transform.position.z + rangeY));
 
+            // Instatiate enemy in cuboid shape
             Instantiate(enemy, new Vector3(xPos, yPos, zPos), Quaternion.identity);
             yield return new WaitForSeconds(.1f);
         }
@@ -41,8 +46,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.transform.position, radX);
-        Gizmos.DrawWireSphere(this.transform.position, radY);
-        Gizmos.DrawWireSphere(this.transform.position, radZ);
+        Gizmos.DrawWireSphere(this.transform.position, rangeX);
+        Gizmos.DrawWireSphere(this.transform.position, rangeY);
+        Gizmos.DrawWireSphere(this.transform.position, rangeZ);
     }
 }

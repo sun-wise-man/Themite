@@ -9,6 +9,8 @@ public class EnemyFollow : MonoBehaviour
     public NavMeshAgent navMeshEnemy;
     public Animator animator;
     public float agroRange;
+
+    [HideInInspector]
     public bool agro;
     
     float distance;
@@ -16,8 +18,10 @@ public class EnemyFollow : MonoBehaviour
 
     void Update()
     {
+        // Distance between player and enemy
         distance = Vector3.Distance(player.transform.position, this.transform.position);
         
+        // Condition player pos <= range or is enemy agro
         if (distance <= agroRange || agro) 
         {
             Chase();
@@ -34,8 +38,13 @@ public class EnemyFollow : MonoBehaviour
 
     public void Chase()
     {
+        // Animator bool
         isWalking = true;
+        
+        // Stop enemy movement
         navMeshEnemy.isStopped = false;
+        
+        // Set target to player
         navMeshEnemy.SetDestination(player.transform.position);
     }
 }

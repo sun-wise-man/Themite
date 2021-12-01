@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 135376359256621221}
   - component: {fileID: 6419371210768561960}
   - component: {fileID: -4107955762051871318}
+  - component: {fileID: 2223281873985460478}
   m_Layer: 0
   m_Name: ItemPickup
   m_TagString: Untagged
@@ -154,5 +155,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b137a92db1333ce4cb4596cc61a278d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 8321060302759719504, guid: 8a7290a82b9164b4989c321ca29d942a, type: 3}
   amount: 6
+--- !u!114 &2223281873985460478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610410739049411122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec9f504489dfa3409be5f3843a33ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 10
