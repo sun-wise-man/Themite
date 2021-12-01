@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b137a92db1333ce4cb4596cc61a278d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4979799529618767948, guid: 8a7290a82b9164b4989c321ca29d942a, type: 3}
   amount: 6
 --- !u!114 &2223281873985460478
 MonoBehaviour:
