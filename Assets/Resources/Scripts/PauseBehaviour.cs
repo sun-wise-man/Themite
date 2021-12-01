@@ -15,8 +15,11 @@ public class PauseBehaviour : MonoBehaviour
 
     public static bool isPaused;
 
-    private void Start() {
-        
+    private void Start() 
+    {
+        //
+        Cursor.visible = true;
+
         // Find spawner for counting enemies
         spawner = GameObject.FindGameObjectWithTag("Spawner");
 
@@ -45,6 +48,8 @@ public class PauseBehaviour : MonoBehaviour
 
     public void PauseGame()
     {
+        Cursor.visible = true;
+
         // Cursor to !Lock
         Cursor.lockState = CursorLockMode.None;
         
@@ -68,6 +73,7 @@ public class PauseBehaviour : MonoBehaviour
     // Method for Resume button
     public void ResumeGame()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
      
         gameUI.SetActive(true);
@@ -82,7 +88,8 @@ public class PauseBehaviour : MonoBehaviour
     public void StartGame()
     {
         Cursor.lockState = CursorLockMode.Locked;
-     
+        Cursor.visible = false;
+        
         gameUI.SetActive(true);
         startMenu.SetActive(false);
         
@@ -97,6 +104,7 @@ public class PauseBehaviour : MonoBehaviour
     // Method for calling gameover screen
     public void GameOverScreen()
     {
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         
         gameUI.SetActive(false);
@@ -110,6 +118,7 @@ public class PauseBehaviour : MonoBehaviour
     // Method for calling won screen
     public void WonScreen()
     {
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         
         gameUI.SetActive(false);
