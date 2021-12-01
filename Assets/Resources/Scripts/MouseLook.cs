@@ -24,12 +24,14 @@ public class MouseLook : MonoBehaviour
 
     void GetInput()
     {
+        // Get mouse position by multiplying sensitivity
         xMousePos = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         yMousePos = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
     }
 
     void RotatePlayer()
     {
+        // Rotate player
         xRotation -= yMousePos;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 

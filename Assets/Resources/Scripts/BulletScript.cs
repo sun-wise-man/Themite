@@ -29,44 +29,60 @@ public class BulletScript : MonoBehaviour
     }
 
     private void Update() {
+
+        // Explode if collide more than max
         if (collisions >= maxCollisions) EffectExplode();
         
+        // Explode if doesn't hit anyting for 'maxLifetime' amount of time
         maxLifetime -= Time.deltaTime;
-        if (maxLifetime <= 0) Invoke("Delay", 0.05f);
+        if (maxLifetime <= 0) Invoke("Destroy", 0.05f);
     }
 
+    // Method for explode effect
     void EffectExplode()
     {
+        // Audio SFX
+        FindObjectOfType<AudioManager>().Play("ProjectileHit");
+        
+        // Instatiate explosion game object
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
-        Delay();
+        
+        Destroy();
+        return;
     }
 
     void Explode()
     {
-        //Debug.Log("Hit!");
-        //Instantiate explosion
+        // Audio
+        FindObjectOfType<AudioManager>().Play("ProjectileHit");
+        
+        // Instantiate explosion
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
-        //Check for enemies
+        // Check for enemies
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
         for (int i = 0; i < enemies.Length; i++)
         {
-            //Get component of enemy and call Take Damage
+            // Get component of enemy and call Take Damage
             enemies[i].GetComponent<EnemyHealth>().TakeDamage(explosionDamage);
         }
 
-        Invoke("Delay", 0.01f);
+        // Destroy game object with a delay
+        Invoke("Destroy", 0.01f);
     }
 
-    void Delay()
+    void Destroy()
     {
         Destroy(gameObject);
+        return;
     }
 
     private void OnCollisionEnter(Collision collision) 
     {
+        // Collision counter
         collisions++;
 
+        // Check if collide with 'enemy'
         if (collision.collider.CompareTag("Enemy") && explodeOnTouch) 
         {
             Explode(); 
@@ -76,22 +92,16 @@ public class BulletScript : MonoBehaviour
 
     void Setup()
     {
-        //Create new physic material
+        // Create new physic material
         physcisMat = new PhysicMaterial();
-        //physcisMat.bounciness = bounciness;
+        // physcisMat.bounciness = bounciness;
         physcisMat.frictionCombine = PhysicMaterialCombine.Minimum;
         physcisMat.bounceCombine = PhysicMaterialCombine.Maximum;
 
-        //Set material to collider
+        // Set material to collider
         GetComponent<SphereCollider>().material = physcisMat;
 
-        //Set gravity
+        // Set gravity
         rb.useGravity = useGravity;
     }
-    
-    // private void OnDrawGizmosSelected()
-    // {
-    //     Gizmos.color = Color.red;
-    //     Gizmos.DrawWireSphere(transform.position, explosionRange);
-    // }
 }

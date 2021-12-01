@@ -9,8 +9,8 @@ public class ItemPickup : MonoBehaviour
 
     private void Awake() 
     {
+        // Find player
         player = GameObject.FindGameObjectWithTag("Player");
-        Invoke("DestroyObject", 10f);
 
     }
 
@@ -18,13 +18,12 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // Referenced its GiveHealth method
             player.GetComponent<PlayerHealth>().GiveHealth(amount);
+            
+            // Destroy after colliding
             Destroy(gameObject);
+            return;
         }
-    }
-
-    void DestroyObject()
-    {
-        Destroy(gameObject);
     }
 }
