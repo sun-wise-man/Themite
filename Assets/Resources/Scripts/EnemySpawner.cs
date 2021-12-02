@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
             // Randomize range
             xPos = Random.Range((transform.position.x - rangeX), (transform.position.x + rangeX));
             yPos = Random.Range((transform.position.y - rangeY), (transform.position.y + rangeY));
-            zPos = Random.Range((transform.position.z - rangeY), (transform.position.z + rangeY));
+            zPos = Random.Range((transform.position.z - rangeZ), (transform.position.z + rangeZ));
 
             // Instatiate enemy in cuboid shape
             Instantiate(enemy, new Vector3(xPos, yPos, zPos), Quaternion.identity);

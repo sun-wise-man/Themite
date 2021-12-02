@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4979799529618767955}
   - component: {fileID: 4979799529618767959}
   - component: {fileID: 4979799529618767952}
-  - component: {fileID: 8321060302759719504}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -102,20 +101,6 @@ MonoBehaviour:
   rbGroundDrag: 6
   rbAirDrag: 2
   camAnim: {fileID: 4979799530568079702}
---- !u!114 &8321060302759719504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4979799529618767948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98afc5410effc2247b283ad45f737f74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 30
-  healthBar: {fileID: 0}
 --- !u!1 &4979799529664135771
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +368,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8321060302439224131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6148292094621591306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ccfd0731c583046987b85566c51a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6386252718907000570, guid: d12b8ed80f8b31d47b1c4e6fe1ca7fdc, type: 3}
+  animator: {fileID: 996175013860952533}
+  shootForce: 200
+  upwardForce: 0
+  timeBetweenShooting: 0.5
+  spread: 0
+  reloadTime: 0
+  timeBetweenShots: 0
+  magazineSize: 500
+  bulletPerTap: 1
+  allowedButtonHold: 0
+  fpsCam: {fileID: 4979799530568079696}
+  attackPoint: {fileID: 1591235820056390374}
+  allowInvoke: 1
 --- !u!1 &8321060302120707695
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,32 +425,6 @@ Transform:
   m_Father: {fileID: 4979799530568079703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8321060302439224131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6148292094621591306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10ccfd0731c583046987b85566c51a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 6386252718907000570, guid: d12b8ed80f8b31d47b1c4e6fe1ca7fdc, type: 3}
-  animator: {fileID: 996175013860952533}
-  shootForce: 200
-  upwardForce: 0
-  timeBetweenShooting: 0.5
-  spread: 0
-  reloadTime: 0
-  timeBetweenShots: 0
-  magazineSize: 500
-  bulletPerTap: 1
-  allowedButtonHold: 0
-  fpsCam: {fileID: 4979799530568079696}
-  attackPoint: {fileID: 1591235820056390374}
-  allowInvoke: 1
 --- !u!1001 &7971062371371821582
 PrefabInstance:
   m_ObjectHideFlags: 0

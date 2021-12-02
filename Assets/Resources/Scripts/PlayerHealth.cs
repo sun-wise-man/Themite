@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth;
+
+    HealthBar healthBar;
     int health;
 
-    public HealthBar healthBar;
-    public UIBehaviour retryBehaviour;
-
-    void Start()
+    void Awake()
     {
+        healthBar = FindObjectOfType<HealthBar>();
+
         // Set max health
         health = maxHealth;
 
@@ -34,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         if (health < damage)
         {
             // Display Game Over
-            retryBehaviour.GameOverScreen();
+            FindObjectOfType<UIBehaviour>().GameOverScreen();
 
             // Audio
             FindObjectOfType<AudioManager>().Play("PlayerDeath");

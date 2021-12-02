@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 6429238494207074816}
   - component: {fileID: -2148327802536972089}
   - component: {fileID: 4567062140893582853}
+  - component: {fileID: 4240990975032941364}
+  - component: {fileID: 2150674577713435566}
+  - component: {fileID: 7946984171233343417}
   m_Layer: 7
   m_Name: Tuyul
   m_TagString: Enemy
@@ -153,7 +156,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32, z: 0.3}
+  m_Size: {x: 0.32, y: 0.32, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-2148327802536972089
 Rigidbody:
@@ -186,3 +189,49 @@ MonoBehaviour:
   health: 50
   deathEffect: {fileID: 7233370415585132090, guid: 3292c784991083f43bb9c9bfeb657f53, type: 3}
   itemPickup: {fileID: 8610410739049411122, guid: ec36cfbe34c7a874b87d367ddd0b5340, type: 3}
+--- !u!114 &4240990975032941364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333375664671731103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c442edc32973dd43842be8a6fdf8f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 5
+  wanderTimer: 5
+  isWander: 0
+--- !u!114 &2150674577713435566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333375664671731103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15ee59fcbc94db4a8539c05627ba4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  player: {fileID: 4979799529618767948, guid: 8a7290a82b9164b4989c321ca29d942a, type: 3}
+--- !u!114 &7946984171233343417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333375664671731103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a39008ac5224745b7ce8925bcd59e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  navMeshEnemy: {fileID: 3421664302582990963}
+  agroRange: 10
+  animator: {fileID: 8333375664671731102}
+  agro: 0

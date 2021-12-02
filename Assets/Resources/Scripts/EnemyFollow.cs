@@ -5,16 +5,19 @@ using UnityEngine.AI;
 
 public class EnemyFollow : MonoBehaviour
 {
-    public GameObject player;
     public NavMeshAgent navMeshEnemy;
-    public Animator animator;
     public float agroRange;
+    public Animator animator;
 
     [HideInInspector]
     public bool agro;
     
+    GameObject player;
     float distance;
-    bool isWalking;
+
+    void Awake() {
+        player = GameObject.FindWithTag("Player");
+    }
 
     void Update()
     {
@@ -25,26 +28,22 @@ public class EnemyFollow : MonoBehaviour
         if (distance <= agroRange || agro) 
         {
             Chase();
+            GetComponent<EnemyWander>().isWander = false;
         }
         
         else 
         {
-            navMeshEnemy.isStopped = true;
-            isWalking = false;
+            GetComponent<EnemyWander>().isWander = true;
+        
+            animator.SetBool("isWalking", false);
         }
-
-        animator.SetBool("isWalking", isWalking);
     }
 
     public void Chase()
-    {
-        // Animator bool
-        isWalking = true;
-        
-        // Stop enemy movement
-        navMeshEnemy.isStopped = false;
-        
+    {        
         // Set target to player
         navMeshEnemy.SetDestination(player.transform.position);
+        
+        animator.SetBool("isWalking", true);
     }
 }

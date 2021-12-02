@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33f5c2176754144a8b6fa902749db74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 8333375664671731103, guid: b400bd10cacfa9842a36ba0a3948105d, type: 3}
   enemyCount: 0
-  maxRangeX: 0
-  maxRangeY: 0
-  maxRangeZ: 0
+  rangeX: 0
+  rangeY: 0
+  rangeZ: 0
