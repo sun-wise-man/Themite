@@ -96,7 +96,7 @@ public class UIBehaviour : MonoBehaviour
 
         // Call 'Count' method in 1 second
         Invoke("Count", 1f);
-        Invoke("DisplayMission", 1f);
+        Invoke("DisplayMission", .5f);
     }
 
     // Method for calling gameover screen
@@ -136,6 +136,11 @@ public class UIBehaviour : MonoBehaviour
     {
         missionDisplay.SetActive(true);
 
-        Invoke(missionDisplay.SetActive(false), 5f);
+        Invoke("HideMission", 5f);
+    }
+
+    void HideMission()
+    {
+        missionDisplay.SetActive(false);
     }
 }

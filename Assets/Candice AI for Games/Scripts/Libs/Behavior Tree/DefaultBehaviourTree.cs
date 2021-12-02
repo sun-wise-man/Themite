@@ -80,8 +80,8 @@ namespace ViridaxGameStudios.AI
         // Update is called once per frame
         void Update()
         {
-            if(!aiController._stopBehaviorTree)
-                Evaluate();
+            // if(!aiController._stopBehaviorTree)
+            //     Evaluate();
         }
 
         public void Evaluate()

@@ -42,7 +42,7 @@ public class Gun : MonoBehaviour
             shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
         //Shooting
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0 && !PauseBehaviour.isPaused)
+        if (readyToShoot && shooting && !reloading && bulletsLeft > 0 && !UIBehaviour.isPaused)
         {
             bulletsShot = 0;
             Shoot();

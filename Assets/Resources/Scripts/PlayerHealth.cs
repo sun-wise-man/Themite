@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     int health;
 
     public HealthBar healthBar;
-    public PauseBehaviour retryBehaviour;
+    public UIBehaviour retryBehaviour;
 
     void Start()
     {

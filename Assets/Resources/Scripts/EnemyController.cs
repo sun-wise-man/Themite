@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     int enemiesLeft = 0;
-    public PauseBehaviour pauseBehaviour;
+    public UIBehaviour uIBehaviour;
 
     public void CountEnemy()
     {
@@ -27,6 +27,6 @@ public class EnemyController : MonoBehaviour
 
     void WonScreen()
     {
-        pauseBehaviour.WonScreen();
+        uIBehaviour.WonScreen();
     }
 }
