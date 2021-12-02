@@ -13,8 +13,6 @@ public class ItemPickup : MonoBehaviour
             // Find Playerhealth and GiveHealth method
             FindObjectOfType<PlayerHealth>().GiveHealth(amount);
             
-            Debug.Log("Health");
-            
             // Destroy after colliding
             Destroy(gameObject);
             return;

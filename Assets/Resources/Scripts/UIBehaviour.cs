@@ -3,25 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseBehaviour : MonoBehaviour
+public class UIBehaviour : MonoBehaviour
 {
+    public GameObject missionDisplay;
     public GameObject gameUI;
     public GameObject pauseMenu;
     public GameObject retryMenu;
     public GameObject startMenu;
     public GameObject wonMenu;
 
-    GameObject spawner;
-
     public static bool isPaused;
 
     private void Start() 
     {
-        //
+        // Cursor visibility
         Cursor.visible = true;
-
-        // Find spawner for counting enemies
-        spawner = GameObject.FindGameObjectWithTag("Spawner");
 
         // !Lock Cursor
         Cursor.lockState = CursorLockMode.None;
@@ -32,6 +28,7 @@ public class PauseBehaviour : MonoBehaviour
         retryMenu.SetActive(false);
         startMenu.SetActive(true);
         wonMenu.SetActive(false);
+        missionDisplay.SetActive(false);
         
         // Set game to paused
         isPaused = true;
@@ -99,6 +96,7 @@ public class PauseBehaviour : MonoBehaviour
 
         // Call 'Count' method in 1 second
         Invoke("Count", 1f);
+        Invoke("DisplayMission", 1f);
     }
 
     // Method for calling gameover screen
@@ -131,6 +129,13 @@ public class PauseBehaviour : MonoBehaviour
     void Count()
     {
         // Count enemy
-        spawner.GetComponent<EnemyController>().CountEnemy();
+        FindObjectOfType<EnemyController>().CountEnemy();
+    }
+
+    void DisplayMission()
+    {
+        missionDisplay.SetActive(true);
+
+        Invoke(missionDisplay.SetActive(false), 5f);
     }
 }
