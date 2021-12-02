@@ -9428,7 +9428,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh114728
+  m_Name: pb_Mesh-2042
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13038,6 +13038,20 @@ MonoBehaviour:
   animator: {fileID: 1773067008}
   agroRange: 10
   agro: 0
+--- !u!114 &1773067003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773067001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b907d716cb6774480a22bfddf65a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  waitTime: 3
 --- !u!195 &1773067004 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 3421664302582990963, guid: b400bd10cacfa9842a36ba0a3948105d, type: 3}
@@ -13062,6 +13076,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   player: {fileID: 3918577028583921453}
+--- !u!114 &1773067013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773067001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88238ad722cea943b9c9c699cc7f62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1776289155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16204,6 +16230,10 @@ PrefabInstance:
     - target: {fileID: 2777552228868334358, guid: 0885566d9f20dc247b53e8784c679254, type: 3}
       propertyPath: m_Name
       value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2777552228868334358, guid: 0885566d9f20dc247b53e8784c679254, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2777552228868334358, guid: 0885566d9f20dc247b53e8784c679254, type: 3}
       propertyPath: m_StaticEditorFlags
