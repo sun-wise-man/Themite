@@ -7104,6 +7104,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c9ae3273a6b5c641b8c0664cc29846c, type: 3}
+--- !u!1 &991715728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991715731}
+  - component: {fileID: 991715730}
+  - component: {fileID: 991715729}
+  m_Layer: 0
+  m_Name: Candice AI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &991715729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991715728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1536ad4da6a7a0045bbd77cdbc752730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayGridGizmos: 1
+  unwalkableMask:
+    serializedVersion: 2
+    m_Bits: 0
+  gridWorldSize: {x: 0, y: 0}
+  nodeRadius: 1
+  obstacleProximityPenalty: 10
+  walkableRegions: []
+--- !u!114 &991715730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991715728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833553c16b439fd4abd090f56d0671ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableDebug: 0
+  grid: {fileID: 991715729}
+  agentCount: 0
+--- !u!4 &991715731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991715728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &996034404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13038,11 +13105,6 @@ MonoBehaviour:
   animator: {fileID: 1773067008}
   agroRange: 10
   agro: 0
---- !u!54 &1773067003 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: -2148327802536972089, guid: b400bd10cacfa9842a36ba0a3948105d, type: 3}
-  m_PrefabInstance: {fileID: 1460558062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!195 &1773067004 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 3421664302582990963, guid: b400bd10cacfa9842a36ba0a3948105d, type: 3}
@@ -13062,26 +13124,171 @@ MonoBehaviour:
   m_GameObject: {fileID: 1773067001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65040b2158e38404798e9f2f07198d7d, type: 3}
+  m_Script: {fileID: 11500000, guid: d95d8379039146442b613b8e0132b58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  rb: {fileID: 1773067003}
-  followTarget: 0
-  obstacleAvoidance: 0
-  oaDistance: 3
-  speed: 900
-  stoppingDistance: 0
-  destroyOnCollision: 0
-  colisionDelay: 3
-  destroyAfterDelay: 0
-  delay: 3
-  stopOnCollision: 0
-  orbit: 0
-  rotate: 0
-  rotationSpeed: 1
-  fireTrue: 0
-  is3D: 1
+  hasAnimations: 0
+  faction:
+    name: 
+    description: 
+    artwork: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    relationships: []
+  healthLow: 0
+  healthLowThreshold: 10
+  is3D: 0
+  hasAttackAnimation: 0
+  attacksPerSecond: 1
+  attackType: 0
+  isAttacking: 0
+  attackProjectile: {fileID: 0}
+  spawnPosition: {fileID: 0}
+  enemyTags:
+  - Player
+  allyTags: []
+  enableHeadLook: 0
+  headLookIntensity: 1
+  m_StatMultiplier: 1.75
+  stats: []
+  currentHP: 100
+  statHitPoints:
+    name: Hit Points
+    baseValue: 100
+    showStat: 0
+    showModifiers: 0
+  statStrength:
+    name: Strength
+    baseValue: 10
+    showStat: 0
+    showModifiers: 0
+  statIntelligence:
+    name: Intelligence
+    baseValue: 10
+    showStat: 0
+    showModifiers: 0
+  statFaith:
+    name: Faith
+    baseValue: 10
+    showStat: 0
+    showModifiers: 0
+  statAttackDamage:
+    name: Attack Damage
+    baseValue: 20
+    showStat: 0
+    showModifiers: 0
+  statAttackRange:
+    name: Attack Range
+    baseValue: 3
+    showStat: 0
+    showModifiers: 0
+  statDamageAngle:
+    name: Damage Angle
+    baseValue: 90
+    showStat: 0
+    showModifiers: 0
+  statArmour:
+    name: Armour
+    baseValue: 3
+    showStat: 0
+    showModifiers: 0
+  statMoveSpeed:
+    name: Movement Speed
+    baseValue: 7
+    showStat: 0
+    showModifiers: 0
+  level: 0
+  moveType: 1
+  rotationSpeed: 30
+  keyUp: 0
+  keyDown: 0
+  keyLeft: 0
+  keyRight: 0
+  keyAttack: 0
+  keyAttack2: 0
+  keyMove: 0
+  special1: 0
+  special2: 0
+  special3: 0
+  clickToMove: 0
+  isMoving: 0
+  isDead: 0
+  pathfindSource: 0
+  rig: {fileID: 0}
+  ragdoll: []
+  enableRagdoll: 0
+  enableRagdollOnDeath: 0
+  cam: {fileID: 0}
+  autoAttack: 1
+  headLookTarget: {fileID: 0}
+  destroyOnDeath: 0
+  destoyOnDeathDelay: 10
+  navMeshAgent: {fileID: 0}
+  healthBar: {fileID: 0}
+  mainTarget: {fileID: 0}
+  moveTarget: {fileID: 0}
+  movePoint: {x: 0, y: 0, z: 0}
+  attackTarget: {fileID: 0}
+  attackPoint: {x: 0, y: 0, z: 0}
+  clickToAttack: 0
+  halfHeight: 0
+  isPlayerControlled: 0
+  _tacticsPlayer: {fileID: 0}
+  perceptionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  animationType: 0
+  idleAnimationName: idle
+  moveAnimationName: walk
+  runAnimationName: run
+  attackAnimationName: attack
+  jumpAnimationName: jump
+  deadAnimationName: dead
+  currentAnimation: none
+  idleTransitionParameter: idle
+  moveTransitionParameter: walk
+  runTransitionParameter: run
+  attackTransitionParameter: attack
+  jumpTransitionParameter: jump
+  deadTransitionParameter: die
+  _agentID: 0
+  _behaviorTree: {fileID: 0}
+  _sensorType: 0
+  _enemies: []
+  _allies: []
+  player: {fileID: 0}
+  _stopBehaviorTree: 0
+  _detectionRadius: 10
+  _detectionHeight: 2
+  _lineOfSight: 180
+  _enemyFound: 0
+  _allyFound: 0
+  _playerFound: 0
+  _obstacleAvoidanceDistance: 3
+  _obstacleAvoidanceAreaOfEffect: 0.5
+  _patrolPoints: []
+  _patrolCount: 0
+  _patrolInOrder: 1
+  _isPatrolling: 0
+  _pointReached: 0
+  _patrolType: 0
+  _waypoint: {fileID: 0}
+  _minPathUpdateTime: 0.2
+  _pathUpdateMoveThreshold: 0.5
+  _turnSpeed: 0
+  _turnDist: 0
+  _stoppingDist: 0
+  _fallingDown: 0
+  _jumpingUp: 0
+  _movingEdge: 0
+  _jumpTarget: {x: 0, y: 0, z: 0}
+  _selectableTiles: []
+  currentTile: {fileID: 0}
+  collidedObject: {fileID: 0}
+  isSelected: 0
+  movePoints: 5
+  jumpHeight: 2
+  jumpVelocity: 4.5
+  turn: 0
 --- !u!114 &1773067011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13111,6 +13318,18 @@ MonoBehaviour:
   health: 50
   deathEffect: {fileID: 7233370415585132090, guid: 3292c784991083f43bb9c9bfeb657f53, type: 3}
   itemPickup: {fileID: 8610410739049411122, guid: ec36cfbe34c7a874b87d367ddd0b5340, type: 3}
+--- !u!114 &1773067013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773067001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88238ad722cea943b9c9c699cc7f62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1776289155
 PrefabInstance:
   m_ObjectHideFlags: 0
