@@ -13,7 +13,7 @@ public class Patrol : MonoBehaviour
     float minX, minZ, maxX, maxZ;
     Vector3 moveSpot;
     private void GetGroundSize(){
-        GameObject ground = GameObject.FindWithTag("ground");//tandai nama field dari wilayahnya
+        GameObject ground = GameObject.FindWithTag("Ground");//tandai nama field dari wilayahnya
         Renderer groundsize = ground.GetComponent<Renderer>();
         minX = (groundsize.bounds.center.x - groundsize.bounds.extents.x);
         maxX = (groundsize.bounds.center.x + groundsize.bounds.extents.x);
