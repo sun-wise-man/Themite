@@ -5,25 +5,28 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
 
-    private Camera mainCam;//ini untuk camera player??
-    public bool useStaticBillboard;// informasi status penggunaan static billboard
+    private Camera mainCam;
+    public bool useStaticBillboard;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         mainCam = Camera.main;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
-        if(!useStaticBillboard){//untuk aktivasi opsi billboarding
+        // Check if use static
+        if(!useStaticBillboard)
+        {
             transform.LookAt(mainCam.transform);
-        }else{
+        }
+        
+        else        
+        {
             transform.rotation = mainCam.transform.rotation;
         }
         
+        // Rotate game object
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
     }
 }

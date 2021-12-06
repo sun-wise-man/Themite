@@ -1,11 +1,15 @@
 using UnityEngine;
 
+// <summary>
+// Player movement using RigidBody
+// </summary>
+
 public class RB_PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float movementMultiplier = 10f;
     public float rbGroundDrag = 6f;
-    public float rbAirDrag = 2f;
+    public float rbAirDrag = 4f;
     public Animator camAnim;
 
     float playerHeight = 2f;

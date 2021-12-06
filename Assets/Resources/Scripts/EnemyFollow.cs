@@ -24,7 +24,7 @@ public class EnemyFollow : MonoBehaviour
         // Distance between player and enemy
         distance = Vector3.Distance(player.transform.position, this.transform.position);
         
-        // Condition player pos <= range or is enemy agro
+        // Condition player pos less-than range OR is enemy agro to player
         if (distance <= agroRange || agro) 
         {
             Chase();

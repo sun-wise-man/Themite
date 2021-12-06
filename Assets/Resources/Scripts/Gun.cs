@@ -59,7 +59,6 @@ public class Gun : MonoBehaviour
     {
         readyToShoot = false;
 
-
         //Set raycast for hit position
         Ray ray = fpsCam.ViewportPointToRay(new Vector3(.5f, .5f, 9));
         RaycastHit hit;

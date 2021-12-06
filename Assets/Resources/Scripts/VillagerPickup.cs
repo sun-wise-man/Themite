@@ -8,8 +8,16 @@ public class VillagerPickup : MonoBehaviour
     {
         if(other.CompareTag("Player"))   
         {
+            // Count saved villager
             FindObjectOfType<VillagerCounter>().CountSaved();
+            
+            // Show UI
+            FindObjectOfType<UIBehaviour>().SavedVillager();
 
+            // Sound
+            FindObjectOfType<AudioManager>().Play("VillagerSaved");
+
+            // Destroy
             Destroy(gameObject);
             return;
         } 

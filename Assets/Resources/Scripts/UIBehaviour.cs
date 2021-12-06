@@ -12,6 +12,7 @@ public class UIBehaviour : MonoBehaviour
     public GameObject retryMenu;
     public GameObject startMenu;
     public GameObject wonMenu;
+    public GameObject savedText;
 
     public TMP_Text wonText;
 
@@ -134,6 +135,7 @@ public class UIBehaviour : MonoBehaviour
         gameUI.SetActive(false);
         wonMenu.SetActive(true);
         missionDisplay.SetActive(false);
+        savedText.SetActive(false);
         
         isPaused = true;
         Time.timeScale = 0f;
@@ -152,9 +154,17 @@ public class UIBehaviour : MonoBehaviour
     {
         missionDisplay.SetActive(true);
     }
-
-    void HideMission()
+    
+    public void SavedVillager()
     {
-        missionDisplay.SetActive(false);
+        savedText.SetActive(true);
+
+        Invoke("HideSavedVillager", 2f);
     }
+
+    void HideSavedVillager()
+    {
+        savedText.SetActive(false);
+    }
+
 }

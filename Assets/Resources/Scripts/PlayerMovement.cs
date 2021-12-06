@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// <summary>
+// Unused.
+// Variation of player movement using CharacterController
+// Unused because I don't know how to set its drag value
+// </summary>
+
 public class PlayerMovement : MonoBehaviour
 {
     public float playerSpeed = 10f;

@@ -11,7 +11,7 @@ public class VillagerCounter : MonoBehaviour
 
     public void CountVillager()
     {
-        // Count enemy-tag game object and add it to an array
+        // Count villager-tag game object and add it to an array
         GameObject[] villagers = GameObject.FindGameObjectsWithTag("Villager");
 
         // Count the length of an array
@@ -20,10 +20,10 @@ public class VillagerCounter : MonoBehaviour
 
     public void CountSaved()
     {
-        // Reduce count if enemy dead
+        // Reduce count if villager saved
         villagerSaved--;
 
-        // Condition if player defeated all the enemy
+        // Check if player saved all the villagers
         if (villagerSaved <= 0) 
         {
             UIBehaviour.villagerBool = true;
