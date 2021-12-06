@@ -19,6 +19,7 @@ When the village lived in peace, a group of evil spirits began to undermine the 
 - [Pixelorama](https://orama-interactive.itch.io/pixelorama) by Orama Interactive
 - [ChipTone](https://sfbgames.itch.io/chiptone) by SFBGames
 
-## Asset Used
-- Texture from 3DTextures.me (License: [CC0](https://3dtextures.me/about/))
+## Credits
+- Textures from 3DTextures.me (License: [CC0](https://3dtextures.me/about/))
 - Font "Splash Bleeding" by Feri Fauzi (License: [Free](https://www.dafont.com/splash-bleeding.font))
+- Crosshair by Kenney (License: [CC0](https://www.kenney.nl/assets/crosshair-pack))
