@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemyController : MonoBehaviour
 {
+    public TMP_Text enemyCondText;
+    
     int enemiesLeft = 0;
 
     public void CountEnemy()
@@ -21,7 +24,12 @@ public class EnemyController : MonoBehaviour
         enemiesLeft--;
 
         // Condition if player defeated all the enemy
-        if (enemiesLeft <= 0) Invoke("WonScreen", 1f);
+        if (enemiesLeft <= 0) 
+        {
+            UIBehaviour.enemyBool = true;
+            enemyCondText.fontStyle = FontStyles.Strikethrough;
+            Invoke("WonScreen", 1.5f);
+        }
     }
 
     void WonScreen()

@@ -9,6 +9,7 @@ TagManager:
   - Spawner
   - Ground
   - HealthBar
+  - Villager
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dff7f56b67066bc4db0469d010e9638e
+guid: 2995d1794d06e4b4a91b2dd31de2856e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - The Solitude
+  - Splash Bleeding
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

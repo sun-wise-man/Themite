@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -12,7 +13,11 @@ public class UIBehaviour : MonoBehaviour
     public GameObject startMenu;
     public GameObject wonMenu;
 
+    public TMP_Text wonText;
+
     public static bool isPaused;
+    public static bool enemyBool = false;
+    public static bool villagerBool = false;
 
     private void Start() 
     {
@@ -54,10 +59,12 @@ public class UIBehaviour : MonoBehaviour
         gameUI.SetActive(false);
         pauseMenu.SetActive(true);
         retryMenu.SetActive(false);
+        missionDisplay.SetActive(false);
         
         // Set game to paused
         isPaused = true;
         Time.timeScale = 0f;
+        
     
     }
 
@@ -76,6 +83,7 @@ public class UIBehaviour : MonoBehaviour
         gameUI.SetActive(true);
         pauseMenu.SetActive(false);
         retryMenu.SetActive(false);
+        missionDisplay.SetActive(true);
      
         isPaused = false;
         Time.timeScale = 1f;
@@ -108,6 +116,7 @@ public class UIBehaviour : MonoBehaviour
         gameUI.SetActive(false);
         pauseMenu.SetActive(false);
         retryMenu.SetActive(true);
+        missionDisplay.SetActive(false);
         
         isPaused = true;
         Time.timeScale = 0f;
@@ -118,9 +127,13 @@ public class UIBehaviour : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        if(enemyBool) wonText.text = "You defeated all the enemies";
+        if(villagerBool) wonText.text = "You saved all the villagers";
         
         gameUI.SetActive(false);
         wonMenu.SetActive(true);
+        missionDisplay.SetActive(false);
         
         isPaused = true;
         Time.timeScale = 0f;
@@ -130,13 +143,14 @@ public class UIBehaviour : MonoBehaviour
     {
         // Count enemy
         FindObjectOfType<EnemyController>().CountEnemy();
+
+        // Count villager
+        FindObjectOfType<VillagerCounter>().CountVillager();
     }
 
     void DisplayMission()
     {
         missionDisplay.SetActive(true);
-
-        Invoke("HideMission", 5f);
     }
 
     void HideMission()
