@@ -2,7 +2,7 @@
 
 *read as "demit" (satan)*
 
-Project of game development course
+Game development course's project
 
 ## Member of Themite Crew
 - Adhityo Wicaksono Putro (18/429050/TK/47552)
