@@ -4,7 +4,7 @@
 
 [**Game Design Document**](https://docs.google.com/document/d/1ZeGX2nfDQ1_DprHfCG7h1i6uDLYu86U3GJUbgvidgW0/edit?usp=sharing)
 
-Video [Demo Old Version](https://youtu.be/Cd7sxFqRr-M) on Youtube
+Video [Demo of Old Version](https://youtu.be/Cd7sxFqRr-M) on Youtube
 
 ## Member of Themite Crew
 - Adhityo Wicaksono Putro (18/429050/TK/47552)
