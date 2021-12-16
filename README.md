@@ -2,8 +2,6 @@
 
 *read as "demit" (satan)*
 
-Game development course's project
-
 [**Game Design Document**](https://docs.google.com/document/d/1ZeGX2nfDQ1_DprHfCG7h1i6uDLYu86U3GJUbgvidgW0/edit?usp=sharing)
 
 ## Member of Themite Crew
